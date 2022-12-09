@@ -43,5 +43,8 @@ def convert_spacy_format_iob(preprocessed_train):
     for text, annot in preprocessed_train:
         doc = nlp(text)
         tags = offsets_to_biluo_tags(doc, annot['entities'])
-        print(tags)
+        tags = [t.replace('L-', 'I-') for t in tags]
+        tags = [t.replace('U-', 'B-') for t in tags]
+        docs.append((text, tags))
+    return docs
 
