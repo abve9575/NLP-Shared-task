@@ -15,6 +15,7 @@ def load_data(
     filepath: str,
 ) -> Tuple[List[str], List[str]]:
 
+    labels2i = {'<PAD>': 0, 'B-PRECEDENT': 1, 'B-RESPONDENT': 2, 'B-COURT': 3, 'B-PETITIONER': 4, 'B-PROVISION': 5, 'B-LAWYER': 6, 'B-STATUTE': 7, 'B-CASE_NUMBER': 8, 'B-DATE': 9, 'B-OTHER_PERSON': 10, 'B-JUDGE': 11, 'B-ORG': 12, 'B-GPE': 13, 'B-WITNESS': 14, 'I-PRECEDENT': 15, 'I-RESPONDENT': 16, 'I-COURT': 17, 'I-PETITIONER': 18, 'I-PROVISION': 19, 'I-LAWYER': 20, 'I-STATUTE': 21, 'I-CASE_NUMBER': 22, 'I-DATE': 23, 'I-OTHER_PERSON': 24, 'I-JUDGE': 25, 'I-ORG': 26, 'I-GPE': 27, 'I-WITNESS': 28, 'O': 29}
     f = open(filepath)
     original = json.load(f)
     preprocessed_train = []
