@@ -42,9 +42,9 @@ def load_data(
                 print("invalid tag detected", tag, text)
                 valid_tags = False
                 break
+        sent = [token.text for token in doc]
         if valid_tags:
             all_tags.append(tags)
-            sent = [token.text for token in doc]
             all_sentences.append(sent)
     return all_sentences, all_tags
 
